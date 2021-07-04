@@ -10,10 +10,10 @@ import {
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
 
-import logo from "../../assets/commerce.png";
+import logo from "../../assets/star.svg";
 import useStyles from "./styles";
 
-const Navbar = () => {
+const Navbar = ({ totalItems }) => {
   const classes = useStyles();
   return (
     <>
@@ -23,7 +23,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Commerce"
-              height="25px"
+              height="55px"
               className={classes.image}
             />
             E-Commerce
@@ -31,7 +31,7 @@ const Navbar = () => {
           <div className={classes.grow} />
           <div className={classes.button}>
             <IconButton aria-label="Show cart items" color="inherit">
-              <Badge badgeContent={2} color="secondary">
+              <Badge badgeContent={totalItems} color="secondary">
                 <ShoppingCart />
               </Badge>
             </IconButton>
