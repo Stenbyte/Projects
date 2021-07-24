@@ -1,27 +1,32 @@
 import React from "react";
-import Text from "./components/textEditor";
+import Details from "./components/Details/Details";
+import Main from "./components/Main/Main";
+import { Grid } from "@material-ui/core";
 import Logo from "./assets/logo.png";
+import useStyles from "./styles";
 
 const App = () => {
+  const classes = useStyles();
   return (
-    <div style={{ boxSizing: "border-box", margin: "*" }}>
-      <header style={{ textAlign: "center", backgroundColor: "#485696" }}>
-        <img src={Logo} alt="" style={{ width: "4.5rem" }} />
-        <h1 style={{ textAlign: "center", color: "white" }}>
-          React Text Editor
-        </h1>
-      </header>
-      <div
-        style={{
-          backgroundColor: "blue",
-          height: "90vh",
-          paddingTop: "2.2rem",
-        }}
+    <div>
+      <Grid
+        className={classes.grid}
+        container
+        spacing={0}
+        alignItems="center"
+        justify="center"
+        style={{ height: "100vh" }}
       >
-        <div>
-          <Text />
-        </div>
-      </div>
+        <Grid item xs={12} sm={4}>
+          <Details title="Income" />
+        </Grid>
+        <Grid item xs={12} sm={3}>
+          <Main />
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <Details title="Expense" />
+        </Grid>
+      </Grid>
     </div>
   );
 };
