@@ -15,7 +15,7 @@ import formatDate from "../../../utils/formatDate";
 import {
   incomeCategories,
   expenseCategories,
-} from "../../../constants/constants";
+} from "../../../constants/categories";
 import { ExpenseTrackerContext } from "../../../context/context";
 const initialState = {
   amount: "",
